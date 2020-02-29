@@ -18,7 +18,7 @@ const fetchBy50 = async list=> {
 	rest.length && await fetchBy50(rest)
 }
 
-const run = async ()=> {
+const runERC20 = async ()=> {
   console.log('get Ethereum tokens list')
   eths = await builtOn('ETH')
   eths.Data.ETH = {}
@@ -35,7 +35,10 @@ const render = ()=> {
  console.log('priced tokens',t,'total value',v)
   document.querySelector('t').textContent = t
   document.querySelector('v').textContent = Math.round(v)
+  document.querySelector('#main_content').innerHTML = p.map( tok=> 
+	`<img src="https://cryptocompare.com${tok.ImageUrl}" width="46" title="${tok.FullName}\n${tok.Prices.USD} USD">`
+	).join('')
 }
 
 var eths = {}, names = []
-run()
+
