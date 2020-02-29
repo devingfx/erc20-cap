@@ -32,11 +32,19 @@
             <h1>{{ site.title | default: site.github.repository_name }}</h1>
             <h2>{{ site.description | default: site.github.project_tagline }}</h2>
           </span>
-          <span class="left-tail"><t></t> ERC20 tokens </span>
-          <span class="right-tail">worth <v></v>USD</span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
         </span>
       </header>
-
+      
+      <section id="downloads">
+        <span class="inner">
+          <t></t> ERC20 tokens
+          <a href="#" class="zip"><em>download</em> .ZIP</a><a href="#" class="tgz"><em>download</em> .TGZ</a>
+          <em>worth <v></v>USD</em>
+        </span>
+      </section>
+      
       {% if site.show_downloads %}
         <section id="downloads">
           <span class="inner">
