@@ -33,6 +33,9 @@ const runERC20 = async ()=> {
   names = Object.keys( eths.Data )
   console.log('token found', names.length)
   await fetchBy50( names )
+  document.querySelector('#main_content').innerHTML = p.map( tok=> 
+      `<img src="https://cryptocompare.com${tok.ImageUrl}" width="46" title="${tok.FullName}\n${tok.Prices.USD} USD">`
+    ).join('')
 }
 const render = ()=> {
   var p = names
@@ -43,9 +46,7 @@ const render = ()=> {
  console.log('priced tokens',t,'total value',v)
   document.querySelector('t').textContent = t
   document.querySelector('v').textContent = Math.round(v)
-  document.querySelector('#main_content').innerHTML = p.map( tok=> 
-	`<img src="https://cryptocompare.com${tok.ImageUrl}" width="46" title="${tok.FullName}\n${tok.Prices.USD} USD">`
-	).join('')
+  
 }
 
 var eths = {}, names = []
