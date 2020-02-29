@@ -21,7 +21,15 @@ const fetchBy50 = async list=> {
 const runERC20 = async ()=> {
   console.log('get Ethereum tokens list')
   eths = await builtOn('ETH')
-  eths.Data.ETH = {}
+  eths.Data.ETH = {
+    BuiltOn: "N/A"
+    ,CoinName: "Ethereum"
+    ,FullName: "Ethereum (ETH)"
+    ,Id: "7605"
+    ,ImageUrl: "/media/20646/eth_logo.png"
+    ,Name: "ETH"
+    ,Symbol: "ETH"
+  } 
   names = Object.keys( eths.Data )
   console.log('token found', names.length)
   await fetchBy50( names )
